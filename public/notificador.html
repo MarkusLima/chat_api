@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Recebedor de notificações</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+</head>
+<body>
+
+  <script type="text/javascript">
+
+	  var socket = io('http://localhost:3000');
+	  socket.on('receivedMessage', function (message) {
+		document.getElementById('id').innerHTML = message.author;
+		document.getElementById('msg').innerHTML = message.message;
+		alert(message.message);
+	  });
+
+	</script>
+  <div id="messagebox">
+	  <span id="id"></span>
+	  <span id="msg"></span>
+	  <span id="all"></span>
+  </div>
+</body>
+</html>
