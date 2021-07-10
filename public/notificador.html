@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Recebedor de notificações</title>
@@ -10,7 +10,7 @@
 
   <script type="text/javascript">
 
-	  var socket = io('http://localhost:3000');
+	  var socket = io('http://192.168.100.5:3000');
 	  socket.on('receivedMessage', function (message) {
 		document.getElementById('id').innerHTML = message.author;
 		document.getElementById('msg').innerHTML = message.message;
